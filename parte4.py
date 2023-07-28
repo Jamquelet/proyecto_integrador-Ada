@@ -25,6 +25,7 @@
 """
 
 import os
+from readchar import readkey, key as k
 
 def convert_map_string(map_string):
     rows = map_string.strip().split("\n")
@@ -45,8 +46,9 @@ def main_loop(map, initial_pos, final_pos):
     while (px, py) != final_pos:
         display_map(map)
 
-        key = input("Presiona una tecla (w, a, s, d): ")
-
+        """ key = input("Presiona una tecla (w, a, s, d): ") """
+        #key in {"w".k.UP} k.LEFT k.RIGHT k.DOWN
+        key = readkey()
         if key == 'w':
             new_px = px - 1
             new_py = py
