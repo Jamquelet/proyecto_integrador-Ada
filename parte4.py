@@ -42,8 +42,9 @@ def display_map(map):
 
 def main_loop(map, initial_pos, final_pos):
     px, py = initial_pos
+    fx, fy = final_pos
 
-    while (px, py) != final_pos:
+    while (px, py) != (fx, fy):
         display_map(map)
 
         """ key = input("Presiona una tecla (w, a, s, d): ") """
@@ -103,19 +104,21 @@ laberinto = """
 ###################.#  
 """
 
-matriz = convert_map_string(laberinto)
-matriz[0][0] = "P"
+map = convert_map_string(laberinto)
+map[0][0] = "P"
 
-display_map(matriz)
+#display_map(matriz)
 
-matriz[1][0] = "P"
-matriz[0][0] = "."
+#matriz[1][0] = "P"
+#matriz[0][0] = "."
 
-display_map(matriz)
+#display_map(matriz)
 
 initial_pos = (0, 0)
-final_pos = (len(matriz)-1, len(matriz[0])-1)
-main_loop(matriz, initial_pos, final_pos)
+final_pos = (len(map)-1, len(map[0])-1)
+main_loop(map, initial_pos, final_pos)
+
+print("¡Felicidades, has llegado al final del laberinto!")
 
 #coordenada 20 es el punto 19 es el eje vertical
 #print(laberinto.split("\n"))
