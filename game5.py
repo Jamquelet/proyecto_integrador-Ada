@@ -23,21 +23,25 @@ class Juego:
 
         lineas = contenido.strip().split('\n') #se divide el contenido en lineas, eliminando los espacios en blanco iniciales y finales con strip(), y con split('\n') para dividir en lineas individuales
         print("líneas leidas: ", lineas) 
+        print("Lineas: ", len(lineas))
 
         dimensiones = tuple(map(int, lineas[0].split()))#convierte la primera linea en una tupla de enteror, que representa las dimensiones del mapa
         print("Dimensiones: ",dimensiones)
 
-        game_map = [list(row) for row in lineas[1:dimensiones[0]+1]]# crea la matriz del mapa, tomando las siguientes lineas despues de las dimensiones del mapa.Cada fila se convierte en una lista y luego todas las listas se agrupan en una lista mas grande
+        game_map = [list(row) for row in lineas[1:dimensiones[0]+1]]# crea la matriz del mapa, tomando las siguientes lineas despues de las dimensiones del mapa(slicing).Cada fila se convierte en una lista y luego todas las listas se agrupan en una lista mas grande
         print("Mapa del laberinto:", game_map)
+        
 
         initial_pos = tuple(map(int, lineas[dimensiones[0]+1].split()))#convierte las coordenadas  iniciales de la siguiente linea en una tupla de enteros
         print("Posición inicial:", initial_pos)
 
+        print("prueba!!")
+
         final_pos = tuple(map(int, lineas[dimensiones[0]+2].split()))#convierte las coordenadas finales de la ultima linea en una tupla de enteros
         print("Posición final:", final_pos)
-
+        print("prueba!!")
         return game_map, initial_pos, final_pos #devuelve las variables que representan el mapa y las coordenadas
-    
+        
     def clear_terminal(self):
         '''
         metodo para limpiar la pantalla de la terminal.detecta si se esta en windows o en otros so'''
@@ -60,7 +64,7 @@ class Juego:
             self.display_map()
             
             key = readkey()
-
+           
             if key == 'w':
                 new_px = px - 1
                 new_py = py

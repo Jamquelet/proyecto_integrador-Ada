@@ -252,3 +252,21 @@ def start_game():
 if __name__ == "__main__":
     start_game()
  """
+
+"""  Importación de módulos: El código comienza importando los módulos necesarios, incluyendo os para funciones del sistema operativo, y readkey y key de la biblioteca readchar para capturar las teclas presionadas.
+
+Función convert_map_string: Esta función toma una cadena que representa el laberinto en forma de matriz y la convierte en una lista de listas. Cada fila de la cadena se convierte en una lista, y todas estas listas forman la representación del laberinto.
+
+Función clear_terminal: Esta función utiliza os.system para limpiar la pantalla de la terminal. El comando cls se usa en Windows y clear en sistemas tipo Unix.
+
+Función display_map: Esta función muestra el laberinto en la terminal. Llama a clear_terminal para borrar la pantalla y luego recorre la lista del laberinto, imprimiendo cada fila.
+
+Función main_loop: Esta es la función principal del juego. Utiliza un bucle while para continuar ejecutando el juego hasta que el jugador llegue a la posición final. Dentro del bucle, se llama a display_map para mostrar el estado actual del laberinto. Luego, captura la tecla presionada utilizando readkey. Dependiendo de la tecla presionada, actualiza las coordenadas del jugador. Si el jugador intenta moverse a una posición inválida (fuera del laberinto o hacia una pared), el movimiento no se realiza. Finalmente, actualiza la posición del jugador en el mapa y verifica si ha llegado al final.
+
+Definición del laberinto: El laberinto se define como una cadena multilínea llamada laberinto. Cada carácter en la cadena representa un elemento en el laberinto, como una pared (#), espacio vacío (.), posición inicial (P), y posición final (F). Se convierte esta cadena en una lista de listas llamada map, que representa el laberinto.
+
+Inicialización de posiciones: Se establecen las posiciones inicial y final del jugador. La posición inicial se establece en (0, 0) y la posición final se calcula utilizando las dimensiones del laberinto.
+
+Llamada a main_loop: Se llama a la función main_loop para comenzar el juego. El jugador interactúa con el juego presionando teclas para moverse en el laberinto.
+
+Mensaje de finalización: Después de que el bucle main_loop termine (el jugador llega al final del laberinto), se imprime un mensaje de felicitaciones. """
