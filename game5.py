@@ -28,16 +28,19 @@ class Juego:
         dimensiones = tuple(map(int, lineas[0].split()))#convierte la primera linea en una tupla de enteror, que representa las dimensiones del mapa
         print("Dimensiones: ",dimensiones)
 
-        game_map = [list(row) for row in lineas[1:dimensiones[0]+1]]# crea la matriz del mapa, tomando las siguientes lineas despues de las dimensiones del mapa(slicing).Cada fila se convierte en una lista y luego todas las listas se agrupan en una lista mas grande
+        map_start = 1
+        map_end = map_start + dimensiones[0]
+
+        game_map = [list(row) for row in lineas[map_start:map_end]]# crea la matriz del mapa, tomando las siguientes lineas despues de las dimensiones del mapa(slicing).Cada fila se convierte en una lista y luego todas las listas se agrupan en una lista mas grande
         print("Mapa del laberinto:", game_map)
         
 
-        initial_pos = tuple(map(int, lineas[dimensiones[0]+1].split()))#convierte las coordenadas  iniciales de la siguiente linea en una tupla de enteros
+        initial_pos = tuple(map(int, lineas[map_end].split()))#convierte las coordenadas  iniciales de la siguiente linea en una tupla de enteros
         print("Posición inicial:", initial_pos)
 
         print("prueba!!")
 
-        final_pos = tuple(map(int, lineas[dimensiones[0]+2].split()))#convierte las coordenadas finales de la ultima linea en una tupla de enteros
+        final_pos = tuple(map(int, lineas[map_end + 1].split()))#convierte las coordenadas finales de la ultima linea en una tupla de enteros
         print("Posición final:", final_pos)
         print("prueba!!")
         return game_map, initial_pos, final_pos #devuelve las variables que representan el mapa y las coordenadas
