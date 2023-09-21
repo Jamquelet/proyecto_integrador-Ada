@@ -12,4 +12,7 @@ Instalar la librería: https://pypi.org/project/readchar/
 
 Escribir un programa que corra un bucle infinito leyendo e imprimiento las teclas y sólo terminará cuando se presione la tecla ↑ indicada como UP
 
+![Alt text](img/game.png)
+
+
 Elaborado por ***José Maya***
